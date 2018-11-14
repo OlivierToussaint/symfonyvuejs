@@ -1,0 +1,39 @@
+/.idea
+
+
+###> symfony/framework-bundle ###
+/.env
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
+
+###> symfony/phpunit-bridge ###
+.phpunit
+/phpunit.xml
+###< symfony/phpunit-bridge ###
+
+###> symfony/web-server-bundle ###
+/.web-server-pid
+###< symfony/web-server-bundle ###
+
+###> symfony/webpack-encore-pack ###
+/node_modules/
+npm-debug.log
+yarn-error.log
+###< symfony/webpack-encore-pack ###
+
+###> friendsofphp/php-cs-fixer ###
+/.php_cs
+/.php_cs.cache
+###< friendsofphp/php-cs-fixer ###
+
+###> docker ###
+/docker/.data
+/docker/logs
+###< docker ###
+
+public/.DS_Store
+public/.DS_Store
+.DS_Store
+
