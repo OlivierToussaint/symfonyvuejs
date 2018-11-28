@@ -3,6 +3,7 @@
   "build/1.js": "/build/1.js",
   "build/2.js": "/build/2.js",
   "build/3.js": "/build/3.js",
+  "build/4.js": "/build/4.js",
   "build/app.js": "/build/app.js",
   "build/runtime.js": "/build/runtime.js"
 }

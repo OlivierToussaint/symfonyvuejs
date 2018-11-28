@@ -46,6 +46,11 @@ class User implements UserInterface
      */
     private $lastname;
 
+    /**
+     * @ORM\Column(type="string", length=190, unique=true)
+     */
+    private $username;
+
     public function __construct()
     {
     }
@@ -62,16 +67,19 @@ class User implements UserInterface
 
     public function setEmail(string $email): self
     {
+        $this->username = $email;
         $this->email = $email;
 
         return $this;
     }
 
-    /**
-     * A visual identifier that represents this user.
-     *
-     * @see UserInterface
-     */
+    public function setUsername(string $username): self
+    {
+        $this->username = $username;
+
+        return $this;
+    }
+
     public function getUsername(): string
     {
         return (string) $this->email;

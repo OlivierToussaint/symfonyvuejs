@@ -2,11 +2,10 @@
 
 declare(strict_types=1);
 
-
 namespace App\Controller\Api;
 
-
 use App\Entity\Post;
+use App\Entity\User;
 use App\Repository\PostRepository;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -39,7 +38,11 @@ class PostController extends AbstractController
      */
     public function new(Request $request, UserRepository $userRepository)
     {
-        $user = $userRepository->findOneBy(['id' => 1]);
+        $user = $this->getUser();
+
+        if ($user instanceof User) {
+            return new Response('Error', Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
         $content = json_decode($request->getContent(), true);
         if ($content['title']) {
             $post = new Post();

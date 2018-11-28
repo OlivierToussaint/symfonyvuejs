@@ -1,5 +1,8 @@
 <template>
     <div>
+        <div class="alert alert-danger m-2" v-if="message">
+            {{ message }}
+        </div>
         <form>
             <div class="form-group">
                 <label>Titre</label>
@@ -21,7 +24,8 @@
         data() {
             return {
                 title: null,
-                content: null
+                content: null,
+                message: null
             }
         },
         methods: {
@@ -32,7 +36,11 @@
 
                 }).then(res => {
 
+                }).catch(error => {
+                    this.message = error.response.data;
+
                 })
+
             },
         }
     }

@@ -8,6 +8,7 @@ const routes = [
     { path: '/posts', component: () => import('../views/Posts.vue') },
     { path: '/post/add', component: () => import('../views/addPost.vue') },
     { path: '/post/view/:id', name: 'show_post', component: () => import('../views/Post.vue') },
+    { path: '/login', component: () => import('../views/Login.vue')},
     { path: '*', redirect: '/' },
 
 ]

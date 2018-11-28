@@ -16,6 +16,13 @@
                     <router-link class="nav-item" tag="li" to="/post/add" active-class="active">
                         <a class="nav-link">Add</a>
                     </router-link>
+                    <router-link class="nav-item" tag="li" to="/login" active-class="active">
+                        <a class="nav-link">Login</a>
+                    </router-link>
+                    <li class="nav-item">
+                        <a class="nav-link" href="api/logout">Logout</a>
+                    </li>
+
                 </ul>
             </div>
         </nav>
