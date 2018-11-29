@@ -27,12 +27,12 @@ class Post
      */
     private $content;
 
-    /**
-     * @MaxDepth(1)
-     * @ORM\ManyToOne(targetEntity="App\Entity\User")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $user;
+//    /**
+//     * @MaxDepth(1)
+//     * @ORM\ManyToOne(targetEntity="App\Entity\User")
+//     * @ORM\JoinColumn(nullable=false)
+//     */
+//    private $user;
 
     /**
      * @ORM\Column(type="datetime")
@@ -88,17 +88,17 @@ class Post
         return $this;
     }
 
-    public function getUser(): ?User
-    {
-        return $this->user;
-    }
-
-    public function setUser(?User $user): self
-    {
-        $this->user = $user;
-
-        return $this;
-    }
+//    public function getUser(): ?User
+//    {
+//        return $this->user;
+//    }
+//
+//    public function setUser(?User $user): self
+//    {
+//        $this->user = $user;
+//
+//        return $this;
+//    }
 
     public function getCreateAt(): ?\DateTimeInterface
     {

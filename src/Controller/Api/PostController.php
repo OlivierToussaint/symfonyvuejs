@@ -36,20 +36,14 @@ class PostController extends AbstractController
     /**
      * @Route("/api/post/new", name="addPost")
      */
-    public function new(Request $request, UserRepository $userRepository)
+    public function new(Request $request)
     {
-        $user = $this->getUser();
-
-        if ($user instanceof User) {
-            return new Response('Error', Response::HTTP_INTERNAL_SERVER_ERROR);
-        }
         $content = json_decode($request->getContent(), true);
         if ($content['title']) {
             $post = new Post();
             $post->setTitle($content['title']);
             $post->setContent($content['content']);
             $post->setPublishAt(new \DateTime('now'));
-            $post->setUser($user);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($post);
             $entityManager->flush();
